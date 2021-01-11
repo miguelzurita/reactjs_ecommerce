@@ -1,4 +1,5 @@
 # reactjs_ecommerce
-An example ecommerce app made with react js
+Un ejemplo de ecommerce realizado con react js 
 
+3 - JSX & transpiling
 ![Screenshot](screenshots/screen01.png)
