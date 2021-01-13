@@ -1,2 +1,5 @@
 # reactjs_ecommerce
-An example ecommerce app made with react js
+Un ejemplo de ecommerce realizado con react js 
+
+4- Componentes I
+![Screenshot](screenshots/screen02.png)
