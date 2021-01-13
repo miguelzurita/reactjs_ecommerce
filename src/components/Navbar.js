@@ -1,5 +1,7 @@
 import BootstrapNavbar from "react-bootstrap/Navbar";
 import './Navbar.css'
+import CartWidget from "./CartWidget";
+
 
 export const Navbar = () => {
 	return (
@@ -8,7 +10,7 @@ export const Navbar = () => {
 			<div className="categories">
 				<p className="menu-item">Inicio</p>
 				<p className="menu-item">Categorias</p>
-				<p className="menu-item">Carrito</p>
+				<CartWidget />
 			</div>
 		</BootstrapNavbar>
 	)
