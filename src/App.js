@@ -6,18 +6,25 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
 
 function App() {
 	return (
 		<>
 			<Navbar/>
 			<Container>
-				<Row>
+				{/*<Row>
 					<Col><h2 className="title">Las ofertas de la semana</h2></Col>
-				</Row>
-				<Row>
+				</Row>*/}
+				{/*<Row>
 					<Col>
 						<ItemListContainer/>
+					</Col>
+				</Row>*/}
+				<h2 className='text-center'>Item Detail Container</h2>
+				<Row>
+					<Col>
+						<ItemDetailContainer/>
 					</Col>
 				</Row>
 			</Container>
