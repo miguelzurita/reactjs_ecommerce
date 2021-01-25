@@ -1,5 +1,5 @@
 # reactjs_ecommerce
 Un ejemplo de ecommerce realizado con react js 
 
-6 Promises, asincronía y MAP
-![Screenshot](screenshots/screen04.png)
+7 Consumiendo APIs
+![Screenshot](screenshots/screen05.png)
