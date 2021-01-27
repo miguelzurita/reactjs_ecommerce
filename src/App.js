@@ -7,28 +7,25 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
+import {BrowserRouter, Switch, Route} from "react-router-dom";
 
 function App() {
 	return (
-		<>
+		<BrowserRouter>
 			<Navbar/>
-			<Container>
-				{/*<Row>
-					<Col><h2 className="title">Las ofertas de la semana</h2></Col>
-				</Row>*/}
-				{/*<Row>
-					<Col>
-						<ItemListContainer/>
-					</Col>
-				</Row>*/}
-				<h2 className='text-center'>Item Detail Container</h2>
-				<Row>
-					<Col>
-						<ItemDetailContainer/>
-					</Col>
-				</Row>
-			</Container>
-		</>
+			<Switch>
+				<Route path='/item/:id'>
+					<ItemDetailContainer/>
+				</Route>
+				<Route path='/category/:idCategory'>
+					<ItemListContainer/>
+				</Route>
+				<Route path='/'>
+					<ItemListContainer/>
+				</Route>
+
+			</Switch>
+		</BrowserRouter>
 	);
 }
 

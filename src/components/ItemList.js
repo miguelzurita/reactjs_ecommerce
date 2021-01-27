@@ -9,9 +9,7 @@ const ItemList = ({items}) => {
 	return (
 		<Row>
 			{items.map(item =>
-				<Col>
-					<Item key={item.id} item={item}/>
-				</Col>
+				<Item key={item.id.toString()} item={item}/>
 			)}
 		</Row>
 	);
