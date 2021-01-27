@@ -2,4 +2,4 @@
 Un ejemplo de ecommerce realizado con react js 
 
 7 Consumiendo APIs
-![Screenshot](screenshots/screen05.png)
+![Screenshot](screenshots/screen06.gif)
