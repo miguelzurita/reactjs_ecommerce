@@ -3,11 +3,15 @@ import ItemList from "./ItemList";
 import {useParams} from "react-router-dom";
 import {Container,Row} from "react-bootstrap";
 
+import {CartContext} from "../cartContext"
+
 const CALL_DELAY_MS = 2000;
 const ItemListContainer = () => {
 
 	const [products, setProducts] = useState([])
 	const {idCategory} = useParams()
+
+	// const CartCont
 
 	let listProducts = [
 		{id: 1, id_category: 1, title: 'zapatilla', description: 'desc 1', stock: 2, price: 10, pictureUrl: 'https://via.placeholder.com/150/000000/FFFFFF/?text=zapatilla'},
@@ -52,6 +56,10 @@ const ItemListContainer = () => {
 				<h3>
 					Catalogo: {idCategory}
 				</h3>
+				Consumer:
+				<CartContext.Consumer>
+					{value => value}
+				</CartContext.Consumer>
 			</Row>
 
 			<ItemList items={products}/>
