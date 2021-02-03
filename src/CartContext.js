@@ -13,20 +13,15 @@ export const CartProvider = ({children}) => {
 			//agregar
 			setProducts([...products, product])
 		} else {
-			console.log("ya existe sumar cantidad");
-			console.log(product);
-			// const indexProductRemove = products.findIndex(item => item.id === product.id);
-			// products[indexProductRemove].quantity = quantity;
-			// setProducts([...products, product])
+			//modificar cantidad
 			setProducts(products.map(item => item.id === product.id ? product : item))
-			// setProducts(products);
 		}
 	}
 
 	useEffect(() => {
 		// console.log("products:" + products.length)
-		console.log("products:")
-		console.log(products);
+		// console.log("products:")
+		// console.log(products);
 	}, [products])
 
 	const removeProduct = (idProduct) => {

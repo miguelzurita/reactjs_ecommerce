@@ -11,7 +11,6 @@ const ItemDetail = ({item}) => {
 
 	const [productQuantity, setProductQuantity] = useState(0)
 	const [showButonFinish, setShowButonFinish] = useState(false)
-	// const [addProduct, removeProduct, clear, products, children] = useContext(CartContext)
 	const [addProduct, products, setProducts] = useContext(CartContext)
 
 	const onAdd = (quantity) => {
