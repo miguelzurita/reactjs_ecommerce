@@ -1,5 +1,5 @@
 # reactjs_ecommerce
 Un ejemplo de ecommerce realizado con react js 
 
-8 Routing y Navegación
-![Screenshot](screenshots/screen06.gif)
+9 Eventos
+![Screenshot](screenshots/screen07.png)

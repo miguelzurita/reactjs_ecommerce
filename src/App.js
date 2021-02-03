@@ -8,6 +8,7 @@ import Col from "react-bootstrap/Col";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
+import Cart from "./components/Cart/Cart";
 
 import {CartContext} from "./cartContext"
 
@@ -20,6 +21,9 @@ function App() {
 			<CartContext.Provider value={[1,2,3,4]}>
 				<Navbar/>
 				<Switch>
+					<Route path='/cart'>
+						<Cart />
+					</Route>
 					<Route path='/item/:idProduct'>
 						<ItemDetailContainer/>
 					</Route>
