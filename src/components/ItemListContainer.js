@@ -3,7 +3,7 @@ import ItemList from "./ItemList";
 import {useParams} from "react-router-dom";
 import {Container,Row} from "react-bootstrap";
 
-import {CartContext} from "../cartContext"
+import {CartContext} from "../CartContext"
 
 const CALL_DELAY_MS = 2000;
 const ItemListContainer = () => {

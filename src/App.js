@@ -1,24 +1,19 @@
 import './App.css';
-import React, {useState} from "react";
+import React from "react";
 import {Navbar} from "./components/Navbar";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetail/ItemDetailContainer";
 import {BrowserRouter, Switch, Route} from "react-router-dom";
 import Cart from "./components/Cart/Cart";
 
-import {CartContext} from "./cartContext"
+import {CartProvider} from "./CartContext";
 
 function App() {
 
-	// const [arr, setArr] = useState([])
-
 	return (
 		<BrowserRouter>
-			<CartContext.Provider value={[1,2,3,4]}>
+			<CartProvider>
 				<Navbar/>
 				<Switch>
 					<Route path='/cart'>
@@ -34,7 +29,7 @@ function App() {
 						<ItemListContainer/>
 					</Route>
 				</Switch>
-			</CartContext.Provider>
+			</CartProvider>
 		</BrowserRouter>
 	);
 }

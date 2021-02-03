@@ -1,24 +1,28 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import './ItemDetail.css'
 import Container from "react-bootstrap/Container";
 import ItemCount from "../ItemCount";
-import {Link, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
+import {CartContext} from "../../CartContext"
 
 const ItemDetail = ({item}) => {
 
 	const [productQuantity, setProductQuantity] = useState(0)
 	const [showButonFinish, setShowButonFinish] = useState(false)
+	// const [addProduct, removeProduct, clear, products, children] = useContext(CartContext)
+	const [addProduct, products, setProducts] = useContext(CartContext)
 
 	const onAdd = (quantity) => {
 		setProductQuantity(quantity)
+		addProduct(item, quantity)
 	}
 
-	useEffect(()=>{
+	useEffect(() => {
 		if (productQuantity > 0) {
 			setShowButonFinish(true)
-		}else{
+		} else {
 			setShowButonFinish(false)
 		}
 	}, [productQuantity])

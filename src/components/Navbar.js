@@ -2,14 +2,13 @@ import BootstrapNavbar from "react-bootstrap/Navbar";
 import './Navbar.css'
 import CartWidget from "./CartWidget";
 import React from "react";
-import {Link, NavLink} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 
 
 export const Navbar = () => {
 	return (
 		<BootstrapNavbar>
 			<NavLink to={`/`}>
-				{/*<BootstrapNavbar.Brand href="#home">Mi Ecommerce</BootstrapNavbar.Brand>*/}
 				Ecommerce
 			</NavLink>
 			<div className="categories">
