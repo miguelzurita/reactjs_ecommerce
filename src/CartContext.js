@@ -9,7 +9,7 @@ export const CartProvider = ({children}) => {
 	const addProduct = (product, quantity) => {
 		product.quantity = quantity
 		if (!isInCart(product.id)) {
-			console.log("no existe lo agrego");
+			// console.log("no existe lo agrego");
 			//agregar
 			setProducts([...products, product])
 		} else {
@@ -20,8 +20,8 @@ export const CartProvider = ({children}) => {
 
 	useEffect(() => {
 		// console.log("products:" + products.length)
-		// console.log("products:")
-		// console.log(products);
+		console.log("products:")
+		console.log(products);
 	}, [products])
 
 	const removeProduct = (idProduct) => {

@@ -6,6 +6,7 @@ import Container from "react-bootstrap/Container";
 import ItemCount from "../ItemCount";
 import {NavLink} from "react-router-dom";
 import {CartContext} from "../../CartContext"
+import Button from "react-bootstrap/Button";
 
 const ItemDetail = ({item}) => {
 
@@ -15,7 +16,10 @@ const ItemDetail = ({item}) => {
 
 	const onAdd = (quantity) => {
 		setProductQuantity(quantity)
-		addProduct(item, quantity)
+	}
+
+	const buy = () =>{
+		addProduct(item, productQuantity)
 	}
 
 	useEffect(() => {
@@ -42,6 +46,11 @@ const ItemDetail = ({item}) => {
 					<Row>
 						<Col className="text-center">
 							{showButonFinish && <NavLink to='/cart'>Terminar compra</NavLink>}
+						</Col>
+					</Row>
+					<Row>
+						<Col className="text-center">
+							{showButonFinish && <Button onClick={buy}>Comprar</Button>}
 						</Col>
 					</Row>
 
