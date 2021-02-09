@@ -56,10 +56,6 @@ const ItemListContainer = () => {
 				<h3>
 					Catalogo: {idCategory}
 				</h3>
-				Consumer:
-				<CartContext.Consumer>
-					{value => value}
-				</CartContext.Consumer>
 			</Row>
 
 			<ItemList items={products}/>

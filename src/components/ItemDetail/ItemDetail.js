@@ -12,14 +12,14 @@ const ItemDetail = ({item}) => {
 
 	const [productQuantity, setProductQuantity] = useState(0)
 	const [showButonFinish, setShowButonFinish] = useState(false)
-	const [addProduct, products, setProducts] = useContext(CartContext)
+	const context = useContext(CartContext)
 
 	const onAdd = (quantity) => {
 		setProductQuantity(quantity)
 	}
 
 	const buy = () =>{
-		addProduct(item, productQuantity)
+		context.addProduct(item, productQuantity)
 	}
 
 	useEffect(() => {
