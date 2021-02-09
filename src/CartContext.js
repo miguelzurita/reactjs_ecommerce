@@ -25,10 +25,7 @@ export const CartProvider = (props) => {
 	}, [products])
 
 	const removeProduct = (idProduct) => {
-		console.log("remover producto:" + idProduct);
-		const indexProductRemove = products.findIndex(item => item.id === idProduct);
-		products.splice(indexProductRemove, 1);
-		return products;
+		setProducts(products.filter((element) => element.id !== idProduct));
 	}
 
 	const clear = () => {
