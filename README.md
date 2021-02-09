@@ -2,4 +2,4 @@
 Un ejemplo de ecommerce realizado con react js 
 
 11 Técnicas de rendering
-![Screenshot](screenshots/screen07.png)
+![Screenshot](screenshots/screen08.png)
