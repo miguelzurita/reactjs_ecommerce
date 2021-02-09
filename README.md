@@ -1,5 +1,5 @@
 # reactjs_ecommerce
 Un ejemplo de ecommerce realizado con react js 
 
-10 Context
+11 Técnicas de rendering
 ![Screenshot](screenshots/screen07.png)
