@@ -5,7 +5,7 @@ import Container from "react-bootstrap/Container";
 
 import {CartContext} from "../../CartContext"
 import {Link} from "react-router-dom";
-import {Button} from "react-bootstrap";
+import {Button, ListGroup} from "react-bootstrap";
 
 const Cart = () => {
 
@@ -24,24 +24,30 @@ const Cart = () => {
 							</Link>
 						</div>
 					) : (
-						<ul>
+						<ListGroup>
 							{context.products.map((item) => (
-								<li key={item.id}>
-									<img src={item.pictureUrl} alt={item.title}/>
-									<div>
-										<h4>{item.title}</h4>
-										<i>{item.quantity} unidades</i>
-										<b>${item.price}</b>
-										<Button
-											variant="danget"
-											onClick={() => context.removeProduct(item.id)}
-										>Eliminar</Button>
-									</div>
-								</li>
+								<ListGroup.Item key={item.id}>
+									<Row className="align-items-center">
+										<Col xs={2} className="text-center">
+											<Button variant="danger" onClick={() => context.removeProduct(item.id)}>Eliminar</Button>
+											<br/>
+											<i>{item.quantity} unidades</i>
+										</Col>
+										<Col xs={3} className="text-center">
+											<img src={item.pictureUrl} alt={item.title}/>
+										</Col>
+										<Col>
+											<div>
+												<h5>{item.title}</h5>
+												<h4>${item.price}</h4>
+											</div>
+										</Col>
+									</Row>
+								</ListGroup.Item>
 							))}
 							<h2>Cantidad: {context.getQuantity()}</h2>
 							<h2>Total: ${context.getTotal()}</h2>
-						</ul>
+						</ListGroup>
 					)}
 				</Col>
 			</Row>
