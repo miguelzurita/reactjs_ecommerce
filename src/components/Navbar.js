@@ -1,11 +1,14 @@
 import BootstrapNavbar from "react-bootstrap/Navbar";
 import './Navbar.css'
 import CartWidget from "./CartWidget";
-import React from "react";
-import {NavLink} from "react-router-dom";
+import React, {useContext} from "react";
+import {Link, NavLink} from "react-router-dom";
+import {CartContext} from "../CartContext";
 
 
 export const Navbar = () => {
+	const cartContext = useContext(CartContext);
+
 	return (
 		<BootstrapNavbar>
 			<NavLink to={`/`}>
@@ -21,7 +24,15 @@ export const Navbar = () => {
 				<NavLink to={`/category/3`}>
 					<p className="menu-item">Jeans</p>
 				</NavLink>
-				<CartWidget/>
+				{
+					cartContext.products.length > 0 && (
+						<Link to={`/cart`}>
+							<CartWidget/>
+						</Link>
+					)
+				}
+
+
 			</div>
 		</BootstrapNavbar>
 	)

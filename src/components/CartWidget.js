@@ -10,11 +10,7 @@ const CartWidget = () => {
 	return (
 		<div>
 			<Icon.Cart3 className="product-cart" id="cart-icon" size="32"/>
-			{
-				cartContext.products.length > 0 && (
-					<span className='badge badge-warning' id='cart-label-count'>{cartContext.getQuantity()}</span>
-				)
-			}
+			<span className='badge badge-warning' id='cart-label-count'>{cartContext.getQuantity()}</span>
 
 		</div>
 	);
