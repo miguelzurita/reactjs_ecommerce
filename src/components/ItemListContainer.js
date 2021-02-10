@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom";
 import {Container,Row} from "react-bootstrap";
 
 import {CartContext} from "../CartContext"
+import {getFireStore} from "../firebase";
 
 const CALL_DELAY_MS = 2000;
 const ItemListContainer = () => {
@@ -21,6 +22,13 @@ const ItemListContainer = () => {
 		{id: 5, id_category: 2, title: 'Remera 2', description: 'desc 2', stock: 4, price: 25, pictureUrl: 'https://via.placeholder.com/150/000000/FFFFFF/?text=remera22'},
 		{id: 6, id_category: 3, title: 'Jean 2', description: 'desc 3', stock: 5, price: 35, pictureUrl: 'https://via.placeholder.com/150/000000/FFFFFF/?text=jean22'},
 	]
+
+	useEffect(()=>{
+		// setLoading(true);
+		let db = getFireStore()
+		const itemCollection = db.collection("products");
+		itemCollection.get().then()
+	})
 
 
 	function simulateAPICall(listItems) {
