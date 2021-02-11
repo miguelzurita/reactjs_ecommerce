@@ -45,7 +45,7 @@ const ItemListContainer = () => {
 
 	//Al recibir el parametro
 	useEffect(() => {
-		console.log("idCategory:" + idCategory);
+
 		// setLoading(true)
 		let db = getFireStore()
 		const itemCollection = db.collection("products");
@@ -53,14 +53,16 @@ const ItemListContainer = () => {
 		let listProducts = itemCollection;
 
 		if (idCategory > 0) {
+			console.log("idCategory:" + idCategory);
 			// simulateAPICall(listProducts.filter(product => product.id_category.toString().includes(idCategory)));
-			listProducts = itemCollection.where('idCategory', '=', idCategory);
+			listProducts = itemCollection.where('idCategory', '==', idCategory);
 		} else {
 		}
 
 		listProducts.get().then((querySnapshot) => {
 			if (querySnapshot.size === 0) {
 				console.log("no results");
+				setProducts([])
 			} else {
 				setProducts(querySnapshot.docs.map(doc => {
 					return {...doc.data(), id: doc.id}
@@ -68,6 +70,7 @@ const ItemListContainer = () => {
 			}
 		}).catch((error) => {
 			console.log("error al recuperar los productos");
+			console.log(error);
 		}).finally();
 
 	}, [idCategory])
