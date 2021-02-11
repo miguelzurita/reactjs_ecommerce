@@ -1,5 +1,5 @@
 # reactjs_ecommerce
 Un ejemplo de ecommerce realizado con react js 
 
-11 Técnicas de rendering
+12 Firebase 1
 ![Screenshot](screenshots/screen08.png)
