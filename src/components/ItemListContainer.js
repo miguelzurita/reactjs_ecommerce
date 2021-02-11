@@ -62,16 +62,9 @@ const ItemListContainer = () => {
 			if (querySnapshot.size === 0) {
 				console.log("no results");
 			} else {
-				console.log("docs:");
-				// console.log(querySnapshot.docs);
 				setProducts(querySnapshot.docs.map(doc => {
 					return {...doc.data(), id: doc.id}
 				}))
-				/*let tmp = querySnapshot.docs.map(doc => {
-					return {...doc.data(), id: doc.id}
-				})
-				console.log("tmo");
-				console.log(tmp);*/
 			}
 		}).catch((error) => {
 			console.log("error al recuperar los productos");
