@@ -2,4 +2,4 @@
 Un ejemplo de ecommerce realizado con react js 
 
 12 Firebase 1
-![Screenshot](screenshots/screen08.png)
+![Screenshot](screenshots/screen09.png)
