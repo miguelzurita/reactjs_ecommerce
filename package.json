@@ -41,6 +41,7 @@
     ]
   },
   "devDependencies": {
+    "csv-parser": "^3.0.0",
     "firebase-admin": "^9.5.0"
   }
 }
