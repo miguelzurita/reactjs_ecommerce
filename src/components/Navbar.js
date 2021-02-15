@@ -12,17 +12,23 @@ export const Navbar = () => {
 	return (
 		<BootstrapNavbar>
 			<NavLink to={`/`}>
-				Ecommerce
+				FilVAR
 			</NavLink>
 			<div className="categories">
 				<NavLink to={`/`}>
 					<p className="menu-item">Catalogo</p>
 				</NavLink>
+				<NavLink to={`/category/1`}>
+					<p className="menu-item">AIRE</p>
+				</NavLink>
 				<NavLink to={`/category/2`}>
-					<p className="menu-item">Remeras</p>
+					<p className="menu-item">ACEITE</p>
 				</NavLink>
 				<NavLink to={`/category/3`}>
-					<p className="menu-item">Jeans</p>
+					<p className="menu-item">COMBUSTIBLE</p>
+				</NavLink>
+				<NavLink to={`/category/4`}>
+					<p className="menu-item">HABITÁCULO</p>
 				</NavLink>
 				{
 					cartContext.products.length > 0 && (
