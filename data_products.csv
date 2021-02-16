@@ -1,4 +1,4 @@
-id;idCategory;title;description;stock;price;pictureUrl
+idInternal;idCategory;title;description;stock;price;pictureUrl
 1;1;MR109;ALFA ROMEO 145/146/155 1,9 TD-2,0 16V ;1;100;https://via.placeholder.com/150/000000/FFFFFF/?text=MR109
 2;1;MR179;ALFA ROMEO 33 1,7 ie PA 4418A C 3177 FAP 3212 300 169 31;2;200;https://via.placeholder.com/150/000000/FFFFFF/?text=MR179
 3;1;MR180;ALFA ROMEO 164 2,0-3,0 CA 4599 C 3471 FAP 2005 339 228 28;3;300;https://via.placeholder.com/150/000000/FFFFFF/?text=MR180

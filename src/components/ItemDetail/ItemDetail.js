@@ -18,7 +18,7 @@ const ItemDetail = ({item}) => {
 		setProductQuantity(quantity)
 	}
 
-	const buy = () =>{
+	const buy = () => {
 		context.addProduct(item, productQuantity)
 	}
 
@@ -42,15 +42,19 @@ const ItemDetail = ({item}) => {
 				<Col>
 					<h5>{item.title}</h5>
 					<div className='price'>${item.price}</div>
+					{(item.stock > 0) ? <div className='stock'>{item.stock} disponibles</div> : <div>sin stock</div>}
+
 					{item && <ItemCount onAdd={onAdd} initial="0" stock={item.stock}/>}
-					<Row>
-						<Col className="text-center">
-							{showButonFinish && <NavLink to='/cart'>Terminar compra</NavLink>}
-						</Col>
-					</Row>
+
 					<Row>
 						<Col className="text-center">
 							{showButonFinish && <Button onClick={buy}>Comprar</Button>}
+						</Col>
+					</Row>
+
+					<Row>
+						<Col className="text-center">
+							{showButonFinish && <NavLink to='/cart'>Terminar compra</NavLink>}
 						</Col>
 					</Row>
 

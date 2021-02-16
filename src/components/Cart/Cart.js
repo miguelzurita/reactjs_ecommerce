@@ -33,8 +33,11 @@ const Cart = () => {
 	};
 
 	const updateStock = async (db) => {
+		let mapIdProducts = context.products.map(item => item.id);
+		// console.log("mapIdProducts:");
+		// console.log(mapIdProducts);
 		const productsToUpdate = db.collection("products")
-			.where(firebase.firestore.FieldPath.documentId(), 'in', context.products.map(item => item.id))
+			.where(firebase.firestore.FieldPath.documentId(), 'in', mapIdProducts)
 		;
 		const query = await productsToUpdate.get();
 		const batch = db.batch();
@@ -64,10 +67,9 @@ const Cart = () => {
 			.add(newOrder)
 			.then(({id}) => {
 				// setLoading(true);
-				console.log("orden creada:");
-				console.log(id);
+				console.log("orden creada:"+ id);
 				setIdOrder(id)
-				// updateStock(db);
+				updateStock(db);
 
 
 				// let document = products.doc('3232')

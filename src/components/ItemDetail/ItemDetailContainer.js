@@ -17,7 +17,7 @@ const ItemDetailContainer = () => {
 				.doc(idProduct)
 				.get()
 				.then((docRef) => {
-					setProduct(docRef.data())
+					setProduct({...docRef.data(), id: docRef.id})
 				})
 				.catch((error) => {
 					console.log("error al recuperar los productos");
