@@ -1,5 +1,7 @@
 # reactjs_ecommerce
-Un ejemplo de ecommerce realizado con react js 
+ 
+13 Firebase 2
++ Se cargan los datos del usuario
++ Se agrega la orden a firestore
 
-12 Firebase 1
-![Screenshot](screenshots/screen09.png)
+![Screenshot](screenshots/screen10.png)
