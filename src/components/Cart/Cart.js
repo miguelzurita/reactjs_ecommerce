@@ -71,6 +71,8 @@ const Cart = () => {
 				setIdOrder(id)
 				updateStock(db);
 
+				//se limpia el carrito al finalizar la compra
+				// context.clear();
 
 				// let document = products.doc('3232')
 				// document.update({stock: 3})
