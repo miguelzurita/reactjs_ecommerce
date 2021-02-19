@@ -1,17 +1,28 @@
 import firebase from 'firebase/app'
 import '@firebase/firestore'
 
+const APIKEY = process.env.REACT_APP_FIREBASE_APIKEY;
+const AUTHDOMAIN = process.env.REACT_APP_FIREBASE_AUTHDOMAIN;
+const PROJECTID = process.env.REACT_APP_FIREBASE_PROJECTID;
+const STORAGEBUCKET = process.env.REACT_APP_FIREBASE_STORAGEBUCKET;
+const MESSAGINGSENDERID = process.env.REACT_APP_FIREBASE_MESSAGINGSENDERID;
+const APPID = process.env.REACT_APP_FIREBASE_APPID;
+const MEASUREMENTID = process.env.REACT_APP_FIREBASE_MEASUREMENTID;
+
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 var firebaseConfig = {
-	apiKey: "AIzaSyBqYr9lECFmRZTDeiyUKlfOyZyDRZ-NGmk",
-	authDomain: "reactjsecommerce-84729.firebaseapp.com",
-	projectId: "reactjsecommerce-84729",
-	storageBucket: "reactjsecommerce-84729.appspot.com",
-	messagingSenderId: "59653033430",
-	appId: "1:59653033430:web:be039c0dcc5301ae366877",
-	measurementId: "G-4C3P9LSNSZ"
+	apiKey: APIKEY,
+	authDomain: AUTHDOMAIN,
+	// projectId: "reactjsecommerce-84729",
+	projectId: PROJECTID,
+	storageBucket: STORAGEBUCKET,
+	messagingSenderId: MESSAGINGSENDERID,
+	appId: APPID,
+	measurementId: MEASUREMENTID
 };
+
+console.log("PROJECTID:"+PROJECTID);
 
 const app = firebase.initializeApp(firebaseConfig)
 
