@@ -3,12 +3,11 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
-import {CartContext} from "../../CartContext"
+import {CartContext} from "../../context/CartContext"
 import {Link} from "react-router-dom";
 import {Button, Form, ListGroup} from "react-bootstrap";
 import {getFireStore} from "../../firebase";
 import firebase from "firebase";
-import Item from "../Item";
 
 const Cart = () => {
 

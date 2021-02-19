@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import './CartWidget.css'
 import * as Icon from 'react-bootstrap-icons'
-import {CartContext} from "../CartContext";
+import {CartContext} from "../../context/CartContext";
 // import Cart from 'react-bootstrap-icons'
 
 const CartWidget = () => {

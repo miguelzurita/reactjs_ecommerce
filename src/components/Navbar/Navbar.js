@@ -1,9 +1,9 @@
 import BootstrapNavbar from "react-bootstrap/Navbar";
 import './Navbar.css'
-import CartWidget from "./CartWidget";
+import CartWidget from "./../CartWidget/CartWidget";
 import React, {useContext} from "react";
 import {Link, NavLink} from "react-router-dom";
-import {CartContext} from "../CartContext";
+import {CartContext} from "../../context/CartContext";
 
 
 export const Navbar = () => {

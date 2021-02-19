@@ -3,9 +3,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import './ItemDetail.css'
 import Container from "react-bootstrap/Container";
-import ItemCount from "../ItemCount";
+import ItemCount from "../Item/ItemCount";
 import {NavLink} from "react-router-dom";
-import {CartContext} from "../../CartContext"
+import {CartContext} from "../../context/CartContext"
 import Button from "react-bootstrap/Button";
 
 const ItemDetail = ({item}) => {

@@ -3,8 +3,8 @@ import ItemList from "./ItemList";
 import {useParams} from "react-router-dom";
 import {Container, Row} from "react-bootstrap";
 
-import {CartContext} from "../CartContext"
-import {getFireStore} from "../firebase";
+import {CartContext} from "../../context/CartContext"
+import {getFireStore} from "../../firebase";
 
 const CALL_DELAY_MS = 2000;
 const ItemListContainer = () => {
