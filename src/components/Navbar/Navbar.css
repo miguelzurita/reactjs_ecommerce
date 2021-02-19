@@ -14,3 +14,8 @@
 	display: flex;
 	justify-content: flex-end;
 }
+
+.categories .route-active{
+	text-decoration: underline;
+	font-weight: bold;
+}
