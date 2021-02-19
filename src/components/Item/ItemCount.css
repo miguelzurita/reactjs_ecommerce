@@ -36,15 +36,20 @@
 }
 
 .itemCount div {
-	/*text-align: center;*/
+
+}
+
+.itemCount .action:hover {
+	text-decoration: none;
+	background-color: #717fe0 !important;
 }
 
 .itemCount .minus:hover {
-	background-color: #717fe0 !important;
+
 }
 
 .itemCount .plus:hover {
-	background-color: #717fe0 !important;
+
 }
 
 .itemCount input {

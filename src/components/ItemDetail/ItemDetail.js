@@ -12,9 +12,10 @@ const ItemDetail = ({item}) => {
 
 	const [productQuantity, setProductQuantity] = useState(0)
 	const [showButonFinish, setShowButonFinish] = useState(false)
+	const [stockText, setStockText] = useState("sin stock")
 	const context = useContext(CartContext)
 
-	const onAdd = (quantity) => {
+	const onChange = (quantity) => {
 		setProductQuantity(quantity)
 	}
 
@@ -23,12 +24,13 @@ const ItemDetail = ({item}) => {
 	}
 
 	useEffect(() => {
-		if (productQuantity > 0) {
-			setShowButonFinish(true)
-		} else {
-			setShowButonFinish(false)
-		}
+		setShowButonFinish(productQuantity > 0)
 	}, [productQuantity])
+
+	useEffect(() => {
+		//Evalua el texto del stock
+		setStockText((item.stock > 0) ? (item.stock == 1) ? "Última disponible!" : `${item.stock} disponibles` : "sin stock")
+	}, [item])
 
 	return (
 		<Container>
@@ -41,13 +43,11 @@ const ItemDetail = ({item}) => {
 				<Col>
 					<h5>{item.title}</h5>
 					<div className='price'>${item.price}</div>
-					<div className='stock'>
-						{(item.stock > 0) ? (item.stock == 1) ? "Última disponible!" : `${item.stock} disponibles` : "sin stock"}
-					</div>
+					<div className='stock'>{stockText}</div>
 
 					<Row>
 						<Col>
-							{item && <ItemCount onAdd={onAdd} initial="0" stock={item.stock}/>}
+							{item && <ItemCount onChange={onChange} initial="0" stock={item.stock}/>}
 						</Col>
 						<Col className="">
 							{showButonFinish && <Button onClick={buy} block>Agregar</Button>}
@@ -56,7 +56,10 @@ const ItemDetail = ({item}) => {
 
 					<Row>
 						<Col className="text-center">
-							{showButonFinish && <Link to='/cart'><Button variant="success" block>Comprar</Button></Link>}
+							{showButonFinish &&
+							<Link to='/cart'>
+								<Button variant="success" block>Comprar</Button>
+							</Link>}
 						</Col>
 					</Row>
 

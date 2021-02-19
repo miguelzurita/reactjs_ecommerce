@@ -2,11 +2,17 @@ import React, {useEffect, useState, createContext} from "react";
 
 export const CartContext = createContext();
 
+/**
+ * Provider Personalizado
+ * @param props
+ * @returns {*}
+ * @constructor
+ */
 export const CartProvider = (props) => {
 	const [products, setProducts] = useState([])
 
 	const addProduct = (product, quantity) => {
-		product.quantity = quantity
+		product.quantity = parseInt(quantity)
 		if (!isInCart(product.id)) {
 			// console.log("no existe lo agrego");
 			//agregar
@@ -16,13 +22,6 @@ export const CartProvider = (props) => {
 			setProducts(products.map(item => item.id === product.id ? product : item))
 		}
 	}
-
-	useEffect(() => {
-		// console.log("products:" + products.length)
-		console.log("products:")
-		console.log(products);
-		console.log("length:" + products.length);
-	}, [products])
 
 	const removeProduct = (idProduct) => {
 		setProducts(products.filter((element) => element.id !== idProduct));
@@ -48,8 +47,6 @@ export const CartProvider = (props) => {
 		return total;
 	};
 
-	// return <CartContext.Provider value={[addProduct, removeProduct, clear, products, children]}>
-	// return <CartContext.Provider value={[addProduct, removeProduct, clear, products]}>
 	return (
 		<CartContext.Provider value={{products, addProduct, removeProduct, clear, getQuantity, getTotal}}>
 			{props.children}

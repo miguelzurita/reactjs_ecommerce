@@ -5,7 +5,6 @@ import React, {useContext} from "react";
 import {Link, NavLink} from "react-router-dom";
 import {CartContext} from "../../context/CartContext";
 
-
 export const Navbar = () => {
 	const cartContext = useContext(CartContext);
 
@@ -37,8 +36,6 @@ export const Navbar = () => {
 						</Link>
 					)
 				}
-
-
 			</div>
 		</BootstrapNavbar>
 	)

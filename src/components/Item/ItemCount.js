@@ -1,33 +1,28 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './ItemCount.css'
 
-export default function ItemCount({stock, initial, onAdd}) {
+export default function ItemCount({stock, initial, onChange: onChange}) {
 
 	const [count, setCount] = useState(Number(initial))
 
-	const onCounterAdd = () => {
-		if (count < stock) {
-			setCount(count + 1)
-			onAdd(count + 1)
-		} else {
+	useEffect(() => {
+		onChange(count)
+	}, [count])
 
-		}
+	const onCounterAdd = () => {
+		setCount((count < stock) ? count + 1 : stock)
 	}
 
 	const onRemove = () => {
-		if (count > initial) {
-			setCount(count - 1)
-		} else {
-
-		}
+		setCount((count > initial) ? count - 1 : 0)
 	}
 
 	return (
 		<div className="itemCount">
 			<div className="qty">
-				<span className="minus bg-dark" onClick={onRemove}>-</span>
+				<a href="#" className="action minus bg-dark" onClick={onRemove}>-</a>
 				<div className="count" name="qty">{count}</div>
-				<span className="plus bg-dark" onClick={onCounterAdd}>+</span>
+				<a href="#" className="action plus bg-dark" onClick={onCounterAdd}>+</a>
 			</div>
 		</div>
 	);

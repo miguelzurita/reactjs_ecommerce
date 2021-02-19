@@ -33,8 +33,6 @@ const Cart = () => {
 
 	const updateStock = async (db) => {
 		let mapIdProducts = context.products.map(item => item.id);
-		// console.log("mapIdProducts:");
-		// console.log(mapIdProducts);
 		const productsToUpdate = db.collection("products")
 			.where(firebase.firestore.FieldPath.documentId(), 'in', mapIdProducts)
 		;
@@ -66,20 +64,9 @@ const Cart = () => {
 			.add(newOrder)
 			.then(({id}) => {
 				// setLoading(true);
-				console.log("orden creada:" + id);
+				// console.log("orden creada:" + id);
 				setIdOrder(id)
 				updateStock(db);
-
-				//se limpia el carrito al finalizar la compra
-				// context.clear();
-
-				// let document = products.doc('3232')
-				// document.update({stock: 3})
-
-				// const batch = db.batch()
-				// batch.update(doc, {stock: 1})
-				// batch.commit().then()
-
 			})
 			.catch((error) => console.log("ocurrio un error"))
 			.finally(() => console.log("termino el proceso"))
