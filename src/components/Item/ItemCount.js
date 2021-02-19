@@ -24,7 +24,7 @@ export default function ItemCount({stock, initial, onAdd}) {
 
 	return (
 		<div className="itemCount">
-			<div className="qty mt-5">
+			<div className="qty">
 				<span className="minus bg-dark" onClick={onRemove}>-</span>
 				<div className="count" name="qty">{count}</div>
 				<span className="plus bg-dark" onClick={onCounterAdd}>+</span>
