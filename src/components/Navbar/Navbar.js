@@ -19,16 +19,16 @@ export const Navbar = () => {
 					<p className="menu-item">Catalogo</p>
 				</NavLink>
 				<NavLink to={`/category/1`}>
-					<p className="menu-item">AIRE</p>
+					<p className="menu-item">Aire</p>
 				</NavLink>
 				<NavLink to={`/category/2`}>
-					<p className="menu-item">ACEITE</p>
+					<p className="menu-item">Aceite</p>
 				</NavLink>
 				<NavLink to={`/category/3`}>
-					<p className="menu-item">COMBUSTIBLE</p>
+					<p className="menu-item">Combustible</p>
 				</NavLink>
 				<NavLink to={`/category/4`}>
-					<p className="menu-item">HABITÁCULO</p>
+					<p className="menu-item">Habitáculo</p>
 				</NavLink>
 				{
 					cartContext.products.length > 0 && (

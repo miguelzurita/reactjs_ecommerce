@@ -78,11 +78,11 @@ const ItemListContainer = () => {
 	return (
 
 		<Container>
-			<Row>
+			{/*<Row>
 				<h3>
 					Catalogo: {idCategory}
 				</h3>
-			</Row>
+			</Row>*/}
 
 			<ItemList items={products}/>
 

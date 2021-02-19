@@ -4,11 +4,11 @@ import Col from "react-bootstrap/Col";
 
 const Item = ({item}) => {
 	return (
-		<Col>
+		<Col className="col-sm-3 text-center">
 			<Link to={`/item/${item.id}`}>
-				<div>{item.title}</div>
-				<div>{item.price}</div>
-				<img src={item.pictureUrl} alt={item.description}/>
+				<h4>{item.title}</h4>
+				<img src={item.pictureUrl} alt={item.description} className="img-fluid"/>
+				<h5>$ {item.price}</h5>
 			</Link>
 		</Col>
 	);
