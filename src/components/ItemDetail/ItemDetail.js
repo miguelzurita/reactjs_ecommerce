@@ -37,7 +37,7 @@ const ItemDetail = ({item}) => {
 			<Row>
 				<Col>
 					<div className="text-center">
-						<img src={item.pictureUrl} alt={item.description}/>
+						<img src={item.image} alt={item.description} className="img-fluid big-image"/>
 					</div>
 				</Col>
 				<Col>
@@ -67,7 +67,7 @@ const ItemDetail = ({item}) => {
 			</Row>
 			<Row>
 				<Col>
-					<h3>Description</h3>
+					<h3>Descripción</h3>
 					{item.description}
 				</Col>
 			</Row>

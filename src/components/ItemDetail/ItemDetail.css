@@ -5,3 +5,7 @@
 .price{
 	font-size: 32px;
 }
+
+.big-image{
+	max-width: 350px;
+}
