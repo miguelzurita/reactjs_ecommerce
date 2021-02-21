@@ -4,15 +4,16 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 
 import {CartContext} from "../../context/CartContext"
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 import {Button, Form, ListGroup} from "react-bootstrap";
 import {getFireStore} from "../../firebase";
 import firebase from "firebase";
 
 const Cart = () => {
 
+	const history = useHistory();
 	const context = useContext(CartContext);
-	const [idOrder, setIdOrder] = useState();
+	const [idOrder, setIdOrder] = useState("");
 
 	const [userData, setUserData] = useState({
 		name: '',
@@ -67,6 +68,7 @@ const Cart = () => {
 				// console.log("orden creada:" + id);
 				setIdOrder(id)
 				updateStock(db);
+				context.clear();
 			})
 			.catch((error) => console.log("ocurrio un error"))
 			.finally(() => console.log("termino el proceso"))
@@ -81,12 +83,17 @@ const Cart = () => {
 					<Container>
 						<Row>
 							{context.products.length === 0 ? (
-								<div className="empty-cart">
+								<Col className="empty-cart">
 									<h2>No hay productos.</h2>
+									{idOrder &&
+										<Row>
+											<Col className="text-center">Perfecto! <br/>Tu orden generada es: {idOrder}</Col>
+										</Row>
+									}
 									<Link to="/">
 										<Button variant="primary">Home</Button>
 									</Link>
-								</div>
+								</Col>
 							) : (
 								<React.Fragment>
 									<Col>
@@ -136,7 +143,7 @@ const Cart = () => {
 											</Form.Group>
 
 											<Button disabled={!disabled} variant="success" onClick={finish}>Confirmar Compra</Button>
-											{idOrder && <div>Tu orden generada: {idOrder}</div>}
+
 										</Form>
 									</Col>
 								</React.Fragment>
