@@ -66,7 +66,7 @@ const ItemDetail = ({item}) => {
 				</Col>
 			</Row>
 			<Row>
-				<Col>
+				<Col className="mt-1">
 					<h3>Descripción</h3>
 					{item.description}
 				</Col>
