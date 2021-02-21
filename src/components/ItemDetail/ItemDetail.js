@@ -4,12 +4,13 @@ import Col from "react-bootstrap/Col";
 import './ItemDetail.css'
 import Container from "react-bootstrap/Container";
 import ItemCount from "../Item/ItemCount";
-import {Link, NavLink} from "react-router-dom";
+import {Link, NavLink, useHistory} from "react-router-dom";
 import {CartContext} from "../../context/CartContext"
 import Button from "react-bootstrap/Button";
 
 const ItemDetail = ({item}) => {
 
+	const history = useHistory();
 	const [productQuantity, setProductQuantity] = useState(0)
 	const [showButonFinish, setShowButonFinish] = useState(false)
 	const [stockText, setStockText] = useState("sin stock")
@@ -19,8 +20,13 @@ const ItemDetail = ({item}) => {
 		setProductQuantity(quantity)
 	}
 
+	const addToCart = () => {
+		context.addProduct(item, productQuantity)
+	}
+
 	const buy = () => {
 		context.addProduct(item, productQuantity)
+		history.push('/cart');
 	}
 
 	useEffect(() => {
@@ -33,33 +39,33 @@ const ItemDetail = ({item}) => {
 	}, [item])
 
 	return (
-		<Container>
+		<Container className="item-detail">
 			<Row>
-				<Col>
+				<Col xs={9}>
 					<div className="text-center">
 						<img src={item.image} alt={item.description} className="img-fluid big-image"/>
 					</div>
 				</Col>
-				<Col>
+				<Col xs={3} className="detail">
 					<h5>{item.title}</h5>
 					<div className='price'>${item.price}</div>
 					<div className='stock'>{stockText}</div>
 
 					<Row>
-						<Col>
+						<Col className="mt-2">
 							{item && <ItemCount onChange={onChange} initial="0" stock={item.stock}/>}
-						</Col>
-						<Col className="">
-							{showButonFinish && <Button onClick={buy} block>Agregar</Button>}
 						</Col>
 					</Row>
 
 					<Row>
-						<Col className="text-center">
-							{showButonFinish &&
-							<Link to='/cart'>
-								<Button variant="success" block>Comprar</Button>
-							</Link>}
+						<Col className="mt-4" >
+							{showButonFinish && <Button onClick={buy} variant="success" block>Comprar Ahora</Button>}
+						</Col>
+					</Row>
+
+					<Row>
+						<Col className="mt-2" >
+							{showButonFinish && <Button onClick={addToCart} variant="secondary" block>Agregar al carrito</Button>}
 						</Col>
 					</Row>
 

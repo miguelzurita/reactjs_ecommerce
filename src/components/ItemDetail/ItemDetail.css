@@ -5,3 +5,7 @@
 .big-image{
 	max-width: 350px;
 }
+
+.item-detail .detail{
+	border-left: 1px solid #dbdada;
+}
